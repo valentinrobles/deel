@@ -27,7 +27,7 @@ const payJob = async ({ profileId, jobId }) => {
     
     const [client,contractor] = await Promise.all([
       profileRepository.getProfileById(profileId, dbOptions),
-      await profileRepository.getProfileById(contract.get('ContractorId'), dbOptions)
+      profileRepository.getProfileById(contract.get('ContractorId'), dbOptions)
     ])
 
     const jobPrice = unpaidJob.get('price');

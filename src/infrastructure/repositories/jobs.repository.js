@@ -51,7 +51,7 @@ const setJobAsPaid = async (jobId, options) => {
 const getPriceOfJobsInProgressByClient = async (clientId, options) => Job.sum('price', {
   where: {
     paid: {
-      [Op.is]: null,
+      [Op.or]: [null, 0, false]
     },
   },
   include: {
