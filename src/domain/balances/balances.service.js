@@ -16,6 +16,8 @@ const checkDepositAmount = (amountToPay, amount) => {
 };
 
 const depositMoney = async ({ profile: payer, userId: receiverId, amount }) => {
+  console.log(`Method: depositMoney - Deposit money to clientReceiverId: ${receiverId}`);
+  
   const txn = await sequelize.transaction();
   const dbOptions = { transaction: txn, lock: txn.LOCK.UPDATE };
 

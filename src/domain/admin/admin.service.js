@@ -8,6 +8,8 @@ const getBestProfession = async ({ startDate, endDate }) => {
   const startDateWithFormat = (startDate && dayjs(startDate).format(dateFormat)) || dayjs().format(dateFormat);
   const endDateWithFormat = (endDate && dayjs(endDate).format(dateFormat)) || dayjs().format(dateFormat);
 
+  console.log(`Method: getBestProfession - Getting the best profession from: ${startDate} to ${endDate}`)
+
   const bestProfession = await adminRepository.getBestProfession(startDateWithFormat, endDateWithFormat);
 
   if (!bestProfession) {
@@ -19,6 +21,8 @@ const getBestProfession = async ({ startDate, endDate }) => {
 const getBestClients = async ({ startDate, endDate, limit }) => {
   const startDateWithFormat = (startDate && dayjs(startDate).format(dateFormat)) || dayjs().format(dateFormat);
   const endDateWithFormat = (endDate && dayjs(endDate).format(dateFormat)) || dayjs().format(dateFormat);
+
+  console.log(`Method: getBestClients - Getting the best clients from: ${startDate} to ${endDate}`)
 
   const bestClients = await adminRepository.getBestClients(startDateWithFormat, endDateWithFormat, limit);
   return bestClients;

@@ -6,11 +6,13 @@ const InsufficientFunds = require('../errors/InsufficientFunds.error');
 const UnpaidJobNotFound = require('../errors/UnpaidJobNotFound.error');
 
 const getUnpaidJobs = async ({ profileId }) => {
+  console.log(`Method: getUnpaidJobs - Getting unpaid jobs for profileId: ${profileId}`);
   const unpaidJobs = await jobsRepository.getUnpaidJobs(profileId);
   return unpaidJobs;
 };
 
 const payJob = async ({ profileId, jobId }) => {
+  console.log(`Method: payJob - Paying jobs with id ${jobId} from client: ${profileId}`);
   const txn = await sequelize.transaction();
   const dbOptions = { transaction: txn, Lock: txn.LOCK.UPDATE };
 
