@@ -96,3 +96,24 @@ It would be great for example if you'd write some unit test / simple frontend de
 When you have finished the assignment, zip your repo (make sure to include .git folder) and send us the zip.
 
 Thank you and good luck! 🙏
+
+## Submitting the Assignment
+
+### How to run the project 
+
+Manually:
+
+`npm i`
+`npm run seed`
+`npm start`
+
+In the `./docs` folder I add a `Postman Collection` to perform request to the service.
+
+I added a `nyc library` to report the code coverage.
+
+### Improvements
+
+- Improve the code coverage to test all the components
+- Add integrations test using sequelize-mock for the db to check how the components interact
+- Add logger and metric library
+- Add Swagger
